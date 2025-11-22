@@ -2,7 +2,7 @@
 
 # Configuration
 URL_DB="http://localhost:8082/api/v1/test-db"
-CONCURRENT_REQUESTS=1000
+CONCURRENT_REQUESTS=2000
 TOTAL_REQUESTS=10000
 
 echo "Starting Database Load Test..."
