@@ -1,0 +1,50 @@
+.{
+    .name = .vendor_server,
+
+    .version = "0.0.0",
+
+    .fingerprint = 0x2ca7d264595bf4ec, // Changing this has security and trust implications.
+
+    .minimum_zig_version = "0.15.1",
+
+    .dependencies = .{
+        .cache = .{
+            .url = "git+https://github.com/karlseguin/cache.zig?ref=master#9f3329b05b3e98da928fe9988d74971da70328b4",
+            .hash = "cache-0.0.0-winRwKaSAAAKIcUzY8IXwcbH050imeWPFMbPW_sCdPLF",
+        },
+        .pg = .{
+            .url = "git+https://github.com/karlseguin/pg.zig?ref=master#f8d4892387fbad2abdf775783e101e50a7114335",
+            .hash = "pg-0.0.0-Wp_7gag6BgD_QAZrPhNNEGpnUZR_LEkKT40Ura3p-4yX",
+        },
+        .httpz = .{
+            .url = "git+https://github.com/karlseguin/http.zig?ref=master#a4477b1dbdc5b820fd4ad301797ca6399f7eb6e4",
+            .hash = "httpz-0.0.0-PNVzrBgtBwCVkSJyophIX6WHwDR0r8XhBGQr96Kk-1El",
+        },
+        .logz = .{
+            .url = "git+https://github.com/karlseguin/log.zig?ref=master#cc5268932e84da9dad09fd48b544d67212889c02",
+            .hash = "logz-0.0.0-O9YWXrJKAgBA98lbuTKXADVOR1ULzRGLMzrj1dkduNAF",
+        },
+        .zul = .{
+            .url = "git+https://github.com/karlseguin/zul?ref=master#e770047f208cf4538fcd9fc64550c84fd5492fc4",
+            .hash = "zul-0.0.0-1oDot9yRBwDA_ovd6GC1M_ViW3LarywMaGrH6vcuEjqv",
+        },
+        .otp_zig = .{
+            .url = "git+https://github.com/SOG-web/otp.zig?ref=master#5fafe292189ca3c04ea0ff998bacae7d999f6e0f",
+            .hash = "otp_zig-0.0.0-qhGCLndzAAC0sZ0oVuaw4QVrxjSbAXLrxiYvyBRX7F1I",
+        },
+        .dotenv = .{
+            .url = "git+https://github.com/SOG-web/dotenv-zig?ref=main#73db75a520d0ac1a2a74d0e9ccc934470665d04e",
+            .hash = "dotenv-0.1.1-MkB8yCw2AABVVvz_zpE3toMQbcevnIJRKwRQQpVB4NvS",
+        },
+        .zig_s3 = .{
+            .url = "git+https://github.com/C4-Loop/zig-s3?ref=main#a5da8d7c7aa2a2e9eda653091d8a81fd2808d69b",
+            .hash = "zig_s3-0.2.0-lxQihMIFAgAn42UHSoLI8dO_KAVFBwDOmbg0Res8ml_O",
+        },
+    },
+
+    .paths = .{
+        "build.zig",
+        "build.zig.zon",
+        "src",
+    },
+}
