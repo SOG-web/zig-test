@@ -1,10 +1,11 @@
 const httpz = @import("httpz");
+const RequestMethods = @import("httpz").Method;
+
 const App = @import("app.zig").App;
 const RequestContext = @import("app.zig").RequestContext;
-const RouterType = @import("app.zig").RouterType;
 const RequestHandler = @import("app.zig").RequestHandler;
 const RouterAction = @import("app.zig").RouterAction;
-const RequestMethods = @import("httpz").Method;
+const RouterType = @import("app.zig").RouterType;
 
 pub const AppRouter = struct {
     path: []const u8,

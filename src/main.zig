@@ -1,16 +1,16 @@
 const std = @import("std");
-const logz = @import("logz");
-const Config = @import("config.zig").Config;
-const pg = @import("pg");
-const App = @import("app/app.zig").App;
+
 const httpz = @import("httpz");
-const router_list = @import("app/router.zig");
+const logz = @import("logz");
+const pg = @import("pg");
+
 const TestService = @import("api/services/test_service.zig").TestService;
+const App = @import("app/app.zig").App;
+const router_list = @import("app/router.zig");
+const Config = @import("config.zig").Config;
 
 pub fn main() !void {
-    var gpa = std.heap.GeneralPurposeAllocator(.{}){};
-    const allocator = gpa.allocator();
-    defer _ = gpa.deinit();
+    const allocator = std.heap.c_allocator;
 
     // Initialize logz early before any logging
     try logz.setup(allocator, .{

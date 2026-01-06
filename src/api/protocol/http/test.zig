@@ -1,9 +1,11 @@
 const std = @import("std");
+
 const httpz = @import("httpz");
+const logz = @import("logz");
+
 const RequestContext = @import("../../../app/app.zig").RequestContext;
 const responses = @import("../../common/responses.zig");
 const TestService = @import("../../services/test_service.zig").TestService;
-const logz = @import("logz");
 
 pub fn testh(ctx: *RequestContext, req: *httpz.Request, res: *httpz.Response) !void {
     const query = try req.query();
@@ -79,7 +81,10 @@ pub fn testDB(ctx: *RequestContext, req: *httpz.Request, res: *httpz.Response) !
     while (try result.next()) |row| {
         const id = row.get([]const u8, 0);
         const email = row.get([]const u8, 1);
-        try users.append(ctx.allocator, .{ .id = id, .email = email });
+        try users.append(ctx.allocator, .{
+            .id = try ctx.allocator.dupe(u8, id),
+            .email = try ctx.allocator.dupe(u8, email),
+        });
     }
 
     try responses.sendSuccess(res, .{
